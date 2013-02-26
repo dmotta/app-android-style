@@ -2,13 +2,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenuActivity" >
+    tools:context=".MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/btnAndroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:background="@drawable/button_custom"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnMaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnAndroid"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="59dp"
+        android:layout_marginLeft="26dp"
+        android:background="@drawable/button_maps"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnMaps"
+        android:layout_alignBottom="@+id/btnMaps"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/button_camera"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnCamera"
+        android:layout_below="@+id/btnCamera"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/button_user"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnUser"
+        android:layout_alignBottom="@+id/btnUser"
+        android:layout_alignLeft="@+id/btnMaps"
+        android:background="@drawable/button_like"
+        android:text="" />
 
 </RelativeLayout>
