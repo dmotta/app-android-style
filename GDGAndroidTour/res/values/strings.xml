@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GDGAndroidTour</string>
+    <string name="hello_world">GDG Android Tour</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_events">EventsActivity</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="title_activity_staff">StaffActivity</string>
+    <string name="title_activity_scan">ScanActivity</string>
+
+</resources>
