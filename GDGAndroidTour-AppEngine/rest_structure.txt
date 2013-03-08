@@ -1,0 +1,66 @@
+{
+  "aula": [
+    {
+      "id": "lunchAula",
+      "nombre":"Lunch Aula"
+    }
+  ]
+}
+
+
+
+{
+ "track": [
+   {
+     "id": "1000",
+     "nombre": "Mobile",
+     "color": "#A6BC40",
+     "resumen": "Aprendiendo sobre aplicaciones para moviles y tabletas con Android"
+   }
+ ]
+}
+
+
+{
+    "ponente": [
+        {
+            "bio": "PhD. Nicolás Bortolotti. Currently Nicholas Bortolotti works as Developer Relations Program Manager at Google. (South Region). Nicolas has developed academic and research communities in several Latin American countries on the development platform of Google, Web and Mobile. Nicolas has played academically as professor of the National Technological University of Argentina (U.T.N.), to the chairs Software Engineering Object Oriented and Mobile Architectures. He has a passion for software development, and programs to grow and support developer communities.",
+            "nombre": "Nicolás",
+            "apellido": "Bortolotti",
+            "nick": "Nicolás Bortolotti",
+            "gplus_url": "https://plus.google.com/u/0/118390709637393195482/posts",
+            "photo_url": "https://gdgdevfestlima.appspot.com/fotos/nicolas.jpg",
+            "gplus_id": "devfestlima2012/2000"           
+        }        
+    ]   
+}
+
+
+{
+ "result": [
+  {
+   "sesion_timeslots": "[
+   {
+   'date': '2012-10-27', 
+   'slot1': (u'09:30', u'11:00')
+   }
+   ]",
+   "sesion": [     
+    {
+     "aula_id": "0",
+	 "hora_inicio": "2012-10-27",
+     "hora_fin": "2012-10-27",
+     "nivel": "Intermedio",
+     "track_id": "",     
+     "titulo": "Android basico",
+     "resumen": "1000",     
+     "id": "devfestlima/1000/",
+     "tags": "Android, AppEngine",
+	 "ponente_id": [
+      "100246763730950354673", "100246763730950354678"
+     ]
+    }
+   ]   
+  }  
+ ]
+}
