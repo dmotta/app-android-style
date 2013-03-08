@@ -1,55 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gdglima.projects.gdgandroidtour"
-    android:versionCode="1"
-    android:versionName="1.0" >
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.gdglima.projects.gdgandroidtour">
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="10" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10"/>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.MainActivity"
-            android:label="@string/app_name" >
+    <permission android:name="com.gdglima.projects.gdgandroidtour.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+
+   <uses-permission android:name="android.permission.INTERNET"/>
+   <uses-permission android:name="com.gdglima.projects.gdgandroidtour.permission.C2D_MESSAGE"/>
+   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+   <uses-permission android:name="android.permission.WAKE_LOCK"/>
+   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+   <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+   <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.gdglima.projects.gdgandroidtour.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.SplashActivity"
-            android:label="@string/title_activity_splash" >
+        <activity android:label="@string/title_activity_splash" android:name="com.gdglima.projects.gdgandroidtour.SplashActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
+        <activity android:label="@string/title_activity_main_menu" android:name="com.gdglima.projects.gdgandroidtour.MainMenuActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.MapActivity"
-            android:label="@string/title_activity_map" >
+        <activity android:label="@string/title_activity_map" android:name="com.gdglima.projects.gdgandroidtour.MapActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.EventsActivity"
-            android:label="@string/title_activity_events" >
+        <activity android:label="@string/title_activity_events" android:name="com.gdglima.projects.gdgandroidtour.EventsActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.ShareActivity"
-            android:label="@string/title_activity_share" >
+        <activity android:label="@string/title_activity_share" android:name="com.gdglima.projects.gdgandroidtour.ShareActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.StaffActivity"
-            android:label="@string/title_activity_staff" >
+        <activity android:label="@string/title_activity_staff" android:name="com.gdglima.projects.gdgandroidtour.StaffActivity">
         </activity>
-        <activity
-            android:name="com.gdglima.projects.gdgandroidtour.ScanActivity"
-            android:label="@string/title_activity_scan" >
+        <activity android:label="@string/title_activity_scan" android:name="com.gdglima.projects.gdgandroidtour.ScanActivity">
         </activity>
-    </application>
+        <service android:name=".GCMIntentService"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.gdglima.projects.gdgandroidtour"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.gdglima.projects.gdgandroidtour"/>
+            </intent-filter>
+        </receiver>
+    
+        <activity android:launchMode="singleTop" android:name=".RegisterActivity"/>
+</application>
 
 </manifest>
