@@ -98,7 +98,7 @@ public class AulaEndpoint {
 		return aula;
 	}
 
-	@ApiMethod(httpMethod = "POST", name = "aula.update", path = "aula/update")
+	@ApiMethod(httpMethod = "POST", name = "aula.update", path = "aula/remove")
 	public Aula removeAula(@Named("id") Long id) {
 		EntityManager mgr = getEntityManager();
 		Aula aula = null;
