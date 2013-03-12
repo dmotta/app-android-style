@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/mzJLHEl0OXVmcIoyFQ7_XkE90_E\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/N81-UOoBqtFe5ntU3rn8oyjCOYE\"",
  "discoveryVersion": "v1",
  "id": "deviceinfoendpoint:v1",
  "name": "deviceinfoendpoint",
@@ -11,10 +11,10 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://myapp.appspot.com/_ah/api/deviceinfoendpoint/v1/",
- "basePath": "/_ah/api/deviceinfoendpoint/v1/",
- "rootUrl": "https://myapp.appspot.com/_ah/api/",
- "servicePath": "deviceinfoendpoint/v1/",
+ "baseUrl": "https://gdglimabackend.appspot.com/_ah/api/deviceinfoendpoint/v1/device/",
+ "basePath": "/_ah/api/deviceinfoendpoint/v1/device/",
+ "rootUrl": "https://gdglimabackend.appspot.com/_ah/api/",
+ "servicePath": "deviceinfoendpoint/v1/device/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -94,82 +94,107 @@
    }
   }
  },
- "methods": {
-  "getDeviceInfo": {
-   "id": "deviceinfoendpoint.getDeviceInfo",
-   "path": "deviceinfo/{id}",
-   "httpMethod": "GET",
-   "parameters": {
-    "id": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "id"
-   ],
-   "response": {
-    "$ref": "DeviceInfo"
-   }
-  },
-  "insertDeviceInfo": {
-   "id": "deviceinfoendpoint.insertDeviceInfo",
-   "path": "deviceinfo",
-   "httpMethod": "POST",
-   "request": {
-    "$ref": "DeviceInfo"
-   },
-   "response": {
-    "$ref": "DeviceInfo"
-   }
-  },
-  "listDeviceInfo": {
-   "id": "deviceinfoendpoint.listDeviceInfo",
-   "path": "deviceinfo",
-   "httpMethod": "GET",
-   "parameters": {
-    "cursor": {
-     "type": "string",
-     "location": "query"
+ "resources": {
+  "device": {
+   "methods": {
+    "get": {
+     "id": "deviceinfoendpoint.device.get",
+     "path": "get/{id}",
+     "httpMethod": "GET",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "id"
+     ],
+     "response": {
+      "$ref": "DeviceInfo"
+     }
     },
-    "limit": {
-     "type": "integer",
-     "format": "int32",
-     "location": "query"
+    "insert": {
+     "id": "deviceinfoendpoint.device.insert",
+     "path": "insert",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "DeviceInfo"
+     },
+     "response": {
+      "$ref": "DeviceInfo"
+     }
+    },
+    "list": {
+     "id": "deviceinfoendpoint.device.list",
+     "path": "list",
+     "httpMethod": "GET",
+     "parameters": {
+      "cursor": {
+       "type": "string",
+       "location": "query"
+      },
+      "limit": {
+       "type": "integer",
+       "format": "int32",
+       "location": "query"
+      }
+     },
+     "response": {
+      "$ref": "CollectionResponse_DeviceInfo"
+     }
+    },
+    "patch": {
+     "id": "deviceinfoendpoint.device.patch",
+     "path": "update",
+     "httpMethod": "PATCH",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "query"
+      }
+     },
+     "parameterOrder": [
+      "id"
+     ],
+     "request": {
+      "$ref": "DeviceInfo"
+     },
+     "response": {
+      "$ref": "DeviceInfo"
+     }
+    },
+    "remove": {
+     "id": "deviceinfoendpoint.device.remove",
+     "path": "remove",
+     "httpMethod": "POST",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "query"
+      }
+     },
+     "parameterOrder": [
+      "id"
+     ],
+     "response": {
+      "$ref": "DeviceInfo"
+     }
+    },
+    "update": {
+     "id": "deviceinfoendpoint.device.update",
+     "path": "update",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "DeviceInfo"
+     },
+     "response": {
+      "$ref": "DeviceInfo"
+     }
     }
-   },
-   "response": {
-    "$ref": "CollectionResponse_DeviceInfo"
-   }
-  },
-  "removeDeviceInfo": {
-   "id": "deviceinfoendpoint.removeDeviceInfo",
-   "path": "deviceinfo/{id}",
-   "httpMethod": "DELETE",
-   "parameters": {
-    "id": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "id"
-   ],
-   "response": {
-    "$ref": "DeviceInfo"
-   }
-  },
-  "updateDeviceInfo": {
-   "id": "deviceinfoendpoint.updateDeviceInfo",
-   "path": "deviceinfo",
-   "httpMethod": "PUT",
-   "request": {
-    "$ref": "DeviceInfo"
-   },
-   "response": {
-    "$ref": "DeviceInfo"
    }
   }
  }

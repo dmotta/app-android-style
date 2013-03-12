@@ -1,9 +1,9 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/GWqmKKmzszB_TMDwqGI7JVIA1Ak\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/iGRh8oUUiShMu26b4MpTQXeD2iA\"",
  "discoveryVersion": "v1",
- "id": "aulaendpoint:v1",
- "name": "aulaendpoint",
+ "id": "trackendpoint:v1",
+ "name": "trackendpoint",
  "version": "v1",
  "description": "This is an API",
  "icons": {
@@ -60,38 +60,44 @@
   }
  },
  "schemas": {
-  "Aula": {
-   "id": "Aula",
-   "type": "object",
-   "properties": {
-    "id": {
-     "type": "string",
-     "format": "int64"
-    },
-    "nombre": {
-     "type": "string"
-    }
-   }
-  },
-  "CollectionResponse_Aula": {
-   "id": "CollectionResponse_Aula",
+  "CollectionResponse_Track": {
+   "id": "CollectionResponse_Track",
    "type": "object",
    "properties": {
     "items": {
      "type": "array",
      "items": {
-      "$ref": "Aula"
+      "$ref": "Track"
      }
     },
     "nextPageToken": {
      "type": "string"
     }
    }
+  },
+  "Track": {
+   "id": "Track",
+   "type": "object",
+   "properties": {
+    "color": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "resumen": {
+     "type": "string"
+    }
+   }
   }
  },
  "methods": {
-  "aulaendpoint.aula.get": {
-   "id": "aulaendpoint.aula.get",
+  "trackendpoint.track.get": {
+   "id": "trackendpoint.track.get",
    "allowGet": true,
    "parameters": {
     "id": {
@@ -104,25 +110,25 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Track"
    }
   },
-  "aulaendpoint.aula.insert": {
-   "id": "aulaendpoint.aula.insert",
+  "trackendpoint.track.insert": {
+   "id": "trackendpoint.track.insert",
    "parameters": {
     "resource": {
-     "$ref": "Aula"
+     "$ref": "Track"
     }
    },
    "parameterOrder": [
     "resource"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Track"
    }
   },
-  "aulaendpoint.aula.list": {
-   "id": "aulaendpoint.aula.list",
+  "trackendpoint.track.list": {
+   "id": "trackendpoint.track.list",
    "allowGet": true,
    "parameters": {
     "cursor": {
@@ -134,18 +140,24 @@
     }
    },
    "returns": {
-    "$ref": "CollectionResponse_Aula"
+    "$ref": "CollectionResponse_Track"
    }
   },
-  "aulaendpoint.aula.patch": {
-   "id": "aulaendpoint.aula.patch",
+  "trackendpoint.track.patch": {
+   "id": "trackendpoint.track.patch",
    "supportsPatch": true,
    "parameters": {
+    "color": {
+     "type": "string"
+    },
     "id": {
      "type": "string",
      "format": "int64"
     },
     "nombre": {
+     "type": "string"
+    },
+    "resumen": {
      "type": "string"
     }
    },
@@ -153,25 +165,11 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Track"
    }
   },
-  "aulaendpoint.aula.update": {
-   "id": "aulaendpoint.aula.update",
-   "parameters": {
-    "resource": {
-     "$ref": "Aula"
-    }
-   },
-   "parameterOrder": [
-    "resource"
-   ],
-   "returns": {
-    "$ref": "Aula"
-   }
-  },
-  "aulaendpoint.device.remove": {
-   "id": "aulaendpoint.device.remove",
+  "trackendpoint.track.remove": {
+   "id": "trackendpoint.track.remove",
    "parameters": {
     "id": {
      "type": "string",
@@ -183,7 +181,21 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Track"
+   }
+  },
+  "trackendpoint.track.update": {
+   "id": "trackendpoint.track.update",
+   "parameters": {
+    "resource": {
+     "$ref": "Track"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Track"
    }
   }
  }

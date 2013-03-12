@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/mzJLHEl0OXVmcIoyFQ7_XkE90_E\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/N81-UOoBqtFe5ntU3rn8oyjCOYE\"",
  "discoveryVersion": "v1",
  "id": "deviceinfoendpoint:v1",
  "name": "deviceinfoendpoint",
@@ -11,8 +11,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://myapp.appspot.com/_ah/api/",
- "rpcUrl": "https://myapp.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://gdglimabackend.appspot.com/_ah/api/",
+ "rpcUrl": "https://gdglimabackend.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {
@@ -93,8 +93,8 @@
   }
  },
  "methods": {
-  "deviceinfoendpoint.getDeviceInfo": {
-   "id": "deviceinfoendpoint.getDeviceInfo",
+  "deviceinfoendpoint.device.get": {
+   "id": "deviceinfoendpoint.device.get",
    "allowGet": true,
    "parameters": {
     "id": {
@@ -109,8 +109,8 @@
     "$ref": "DeviceInfo"
    }
   },
-  "deviceinfoendpoint.insertDeviceInfo": {
-   "id": "deviceinfoendpoint.insertDeviceInfo",
+  "deviceinfoendpoint.device.insert": {
+   "id": "deviceinfoendpoint.device.insert",
    "parameters": {
     "resource": {
      "$ref": "DeviceInfo"
@@ -123,8 +123,8 @@
     "$ref": "DeviceInfo"
    }
   },
-  "deviceinfoendpoint.listDeviceInfo": {
-   "id": "deviceinfoendpoint.listDeviceInfo",
+  "deviceinfoendpoint.device.list": {
+   "id": "deviceinfoendpoint.device.list",
    "allowGet": true,
    "parameters": {
     "cursor": {
@@ -139,8 +139,34 @@
     "$ref": "CollectionResponse_DeviceInfo"
    }
   },
-  "deviceinfoendpoint.removeDeviceInfo": {
-   "id": "deviceinfoendpoint.removeDeviceInfo",
+  "deviceinfoendpoint.device.patch": {
+   "id": "deviceinfoendpoint.device.patch",
+   "supportsPatch": true,
+   "parameters": {
+    "deviceInformation": {
+     "type": "string"
+    },
+    "deviceRegistrationID": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "timestamp": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "DeviceInfo"
+   }
+  },
+  "deviceinfoendpoint.device.remove": {
+   "id": "deviceinfoendpoint.device.remove",
    "parameters": {
     "id": {
      "type": "string",
@@ -154,8 +180,8 @@
     "$ref": "DeviceInfo"
    }
   },
-  "deviceinfoendpoint.updateDeviceInfo": {
-   "id": "deviceinfoendpoint.updateDeviceInfo",
+  "deviceinfoendpoint.device.update": {
+   "id": "deviceinfoendpoint.device.update",
    "parameters": {
     "resource": {
      "$ref": "DeviceInfo"

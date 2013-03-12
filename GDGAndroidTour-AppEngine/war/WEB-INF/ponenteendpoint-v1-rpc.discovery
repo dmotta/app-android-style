@@ -1,9 +1,9 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/GWqmKKmzszB_TMDwqGI7JVIA1Ak\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/2hN14DBXJdsbOaxaPAiSuELqllo\"",
  "discoveryVersion": "v1",
- "id": "aulaendpoint:v1",
- "name": "aulaendpoint",
+ "id": "ponenteendpoint:v1",
+ "name": "ponenteendpoint",
  "version": "v1",
  "description": "This is an API",
  "icons": {
@@ -60,38 +60,53 @@
   }
  },
  "schemas": {
-  "Aula": {
-   "id": "Aula",
-   "type": "object",
-   "properties": {
-    "id": {
-     "type": "string",
-     "format": "int64"
-    },
-    "nombre": {
-     "type": "string"
-    }
-   }
-  },
-  "CollectionResponse_Aula": {
-   "id": "CollectionResponse_Aula",
+  "CollectionResponse_Ponente": {
+   "id": "CollectionResponse_Ponente",
    "type": "object",
    "properties": {
     "items": {
      "type": "array",
      "items": {
-      "$ref": "Aula"
+      "$ref": "Ponente"
      }
     },
     "nextPageToken": {
      "type": "string"
     }
    }
+  },
+  "Ponente": {
+   "id": "Ponente",
+   "type": "object",
+   "properties": {
+    "alias": {
+     "type": "string"
+    },
+    "apellido": {
+     "type": "string"
+    },
+    "gplus_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "gplus_url": {
+     "type": "string"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "photo_url": {
+     "type": "string"
+    },
+    "resumen": {
+     "type": "string"
+    }
+   }
   }
  },
  "methods": {
-  "aulaendpoint.aula.get": {
-   "id": "aulaendpoint.aula.get",
+  "ponenteendpoint.ponente.get": {
+   "id": "ponenteendpoint.ponente.get",
    "allowGet": true,
    "parameters": {
     "id": {
@@ -104,25 +119,25 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Ponente"
    }
   },
-  "aulaendpoint.aula.insert": {
-   "id": "aulaendpoint.aula.insert",
+  "ponenteendpoint.ponente.insert": {
+   "id": "ponenteendpoint.ponente.insert",
    "parameters": {
     "resource": {
-     "$ref": "Aula"
+     "$ref": "Ponente"
     }
    },
    "parameterOrder": [
     "resource"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Ponente"
    }
   },
-  "aulaendpoint.aula.list": {
-   "id": "aulaendpoint.aula.list",
+  "ponenteendpoint.ponente.list": {
+   "id": "ponenteendpoint.ponente.list",
    "allowGet": true,
    "parameters": {
     "cursor": {
@@ -134,18 +149,38 @@
     }
    },
    "returns": {
-    "$ref": "CollectionResponse_Aula"
+    "$ref": "CollectionResponse_Ponente"
    }
   },
-  "aulaendpoint.aula.patch": {
-   "id": "aulaendpoint.aula.patch",
+  "ponenteendpoint.ponente.patch": {
+   "id": "ponenteendpoint.ponente.patch",
    "supportsPatch": true,
    "parameters": {
-    "id": {
+    "alias": {
+     "type": "string"
+    },
+    "apellido": {
+     "type": "string"
+    },
+    "gplus_id": {
      "type": "string",
      "format": "int64"
     },
+    "gplus_url": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
     "nombre": {
+     "type": "string"
+    },
+    "photo_url": {
+     "type": "string"
+    },
+    "resumen": {
      "type": "string"
     }
    },
@@ -153,25 +188,11 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Ponente"
    }
   },
-  "aulaendpoint.aula.update": {
-   "id": "aulaendpoint.aula.update",
-   "parameters": {
-    "resource": {
-     "$ref": "Aula"
-    }
-   },
-   "parameterOrder": [
-    "resource"
-   ],
-   "returns": {
-    "$ref": "Aula"
-   }
-  },
-  "aulaendpoint.device.remove": {
-   "id": "aulaendpoint.device.remove",
+  "ponenteendpoint.ponente.remove": {
+   "id": "ponenteendpoint.ponente.remove",
    "parameters": {
     "id": {
      "type": "string",
@@ -183,7 +204,21 @@
     "id"
    ],
    "returns": {
-    "$ref": "Aula"
+    "$ref": "Ponente"
+   }
+  },
+  "ponenteendpoint.ponente.update": {
+   "id": "ponenteendpoint.ponente.update",
+   "parameters": {
+    "resource": {
+     "$ref": "Ponente"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Ponente"
    }
   }
  }

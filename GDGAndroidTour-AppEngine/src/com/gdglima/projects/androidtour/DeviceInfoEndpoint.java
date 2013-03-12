@@ -1,8 +1,10 @@
-package com.gdglima.projects.gdgandroidtour;
+package com.gdglima.projects.androidtour;
 
-import com.gdglima.projects.gdgandroidtour.EMF;
+import com.gdglima.projects.androidtour.bo.DeviceInfo;
+import com.gdglima.projects.androidtour.bo.EMF;
 
 import com.google.api.server.spi.config.Api;
+import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.response.CollectionResponse;
 import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.datanucleus.query.JPACursorHelper;
@@ -19,13 +21,7 @@ import javax.persistence.Query;
 @Api(name = "deviceinfoendpoint")
 public class DeviceInfoEndpoint {
 
-	/**
-	 * This method lists all the entities inserted in datastore.
-	 * It uses HTTP GET method and paging support.
-	 *
-	 * @return A CollectionResponse class containing the list of all entities
-	 * persisted and a cursor to the next page.
-	 */
+	@ApiMethod(httpMethod = "GET", name = "device.list", path = "device/list")
 	@SuppressWarnings({ "unchecked", "unused" })
 	public CollectionResponse<DeviceInfo> listDeviceInfo(@Nullable @Named("cursor") String cursorString, @Nullable @Named("limit") Integer limit) {
 
@@ -62,12 +58,7 @@ public class DeviceInfoEndpoint {
 		return CollectionResponse.<DeviceInfo> builder().setItems(execute).setNextPageToken(cursorString).build();
 	}
 
-	/**
-	 * This method gets the entity having primary key id. It uses HTTP GET method.
-	 *
-	 * @param id the primary key of the java bean.
-	 * @return The entity with primary key id.
-	 */
+	@ApiMethod(httpMethod = "GET", name = "device.get", path = "device/get/{id}")
 	public DeviceInfo getDeviceInfo(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		DeviceInfo deviceinfo = null;
@@ -79,14 +70,7 @@ public class DeviceInfoEndpoint {
 		return deviceinfo;
 	}
 
-	/**
-	 * This inserts a new entity into App Engine datastore. If the entity already
-	 * exists in the datastore, an exception is thrown.
-	 * It uses HTTP POST method.
-	 *
-	 * @param deviceinfo the entity to be inserted.
-	 * @return The inserted entity.
-	 */
+	@ApiMethod(httpMethod = "POST", name = "device.insert", path = "device/insert")
 	public DeviceInfo insertDeviceInfo(DeviceInfo deviceinfo) {
 		EntityManager mgr = getEntityManager();
 		try {
@@ -100,14 +84,7 @@ public class DeviceInfoEndpoint {
 		return deviceinfo;
 	}
 
-	/**
-	 * This method is used for updating an existing entity. If the entity does not
-	 * exist in the datastore, an exception is thrown.
-	 * It uses HTTP PUT method.
-	 *
-	 * @param deviceinfo the entity to be updated.
-	 * @return The updated entity.
-	 */
+	@ApiMethod(httpMethod = "POST", name = "device.update", path = "device/update")
 	public DeviceInfo updateDeviceInfo(DeviceInfo deviceinfo) {
 		EntityManager mgr = getEntityManager();
 		try {
@@ -121,13 +98,7 @@ public class DeviceInfoEndpoint {
 		return deviceinfo;
 	}
 
-	/**
-	 * This method removes the entity with primary key id.
-	 * It uses HTTP DELETE method.
-	 *
-	 * @param id the primary key of the entity to be deleted.
-	 * @return The deleted entity.
-	 */
+	@ApiMethod(httpMethod = "POST", name = "device.remove", path = "device/remove")
 	public DeviceInfo removeDeviceInfo(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		DeviceInfo deviceinfo = null;

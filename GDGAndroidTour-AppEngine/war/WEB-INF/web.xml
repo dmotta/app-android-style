@@ -5,7 +5,7 @@
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
   <init-param>
    <param-name>services</param-name>
-   <param-value>com.gdglima.projects.gdgandroidtour.AulaEndpoint,com.gdglima.projects.gdgandroidtour.MessageEndpoint,com.gdglima.projects.gdgandroidtour.DeviceInfoEndpoint</param-value>
+   <param-value>com.gdglima.projects.androidtour.TrackEndpoint,com.gdglima.projects.androidtour.DeviceInfoEndpoint,com.gdglima.projects.androidtour.AulaEndpoint,com.gdglima.projects.androidtour.SesionEndpoint</param-value>
   </init-param>
  </servlet>
  <servlet-mapping>

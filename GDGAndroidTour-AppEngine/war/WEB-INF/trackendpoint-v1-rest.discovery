@@ -1,9 +1,9 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/GWqmKKmzszB_TMDwqGI7JVIA1Ak\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/iGRh8oUUiShMu26b4MpTQXeD2iA\"",
  "discoveryVersion": "v1",
- "id": "aulaendpoint:v1",
- "name": "aulaendpoint",
+ "id": "trackendpoint:v1",
+ "name": "trackendpoint",
  "version": "v1",
  "description": "This is an API",
  "icons": {
@@ -11,10 +11,10 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://gdglimabackend.appspot.com/_ah/api/aulaendpoint/v1/",
- "basePath": "/_ah/api/aulaendpoint/v1/",
+ "baseUrl": "https://gdglimabackend.appspot.com/_ah/api/trackendpoint/v1/track/",
+ "basePath": "/_ah/api/trackendpoint/v1/track/",
  "rootUrl": "https://gdglimabackend.appspot.com/_ah/api/",
- "servicePath": "aulaendpoint/v1/",
+ "servicePath": "trackendpoint/v1/track/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -62,41 +62,47 @@
   }
  },
  "schemas": {
-  "Aula": {
-   "id": "Aula",
-   "type": "object",
-   "properties": {
-    "id": {
-     "type": "string",
-     "format": "int64"
-    },
-    "nombre": {
-     "type": "string"
-    }
-   }
-  },
-  "CollectionResponse_Aula": {
-   "id": "CollectionResponse_Aula",
+  "CollectionResponse_Track": {
+   "id": "CollectionResponse_Track",
    "type": "object",
    "properties": {
     "items": {
      "type": "array",
      "items": {
-      "$ref": "Aula"
+      "$ref": "Track"
      }
     },
     "nextPageToken": {
      "type": "string"
     }
    }
+  },
+  "Track": {
+   "id": "Track",
+   "type": "object",
+   "properties": {
+    "color": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "resumen": {
+     "type": "string"
+    }
+   }
   }
  },
  "resources": {
-  "aula": {
+  "track": {
    "methods": {
     "get": {
-     "id": "aulaendpoint.aula.get",
-     "path": "aula/get/{id}",
+     "id": "trackendpoint.track.get",
+     "path": "get/{id}",
      "httpMethod": "GET",
      "parameters": {
       "id": {
@@ -110,23 +116,23 @@
       "id"
      ],
      "response": {
-      "$ref": "Aula"
+      "$ref": "Track"
      }
     },
     "insert": {
-     "id": "aulaendpoint.aula.insert",
-     "path": "aula/insert",
+     "id": "trackendpoint.track.insert",
+     "path": "insert",
      "httpMethod": "POST",
      "request": {
-      "$ref": "Aula"
+      "$ref": "Track"
      },
      "response": {
-      "$ref": "Aula"
+      "$ref": "Track"
      }
     },
     "list": {
-     "id": "aulaendpoint.aula.list",
-     "path": "aula/list",
+     "id": "trackendpoint.track.list",
+     "path": "list",
      "httpMethod": "GET",
      "parameters": {
       "cursor": {
@@ -140,12 +146,12 @@
       }
      },
      "response": {
-      "$ref": "CollectionResponse_Aula"
+      "$ref": "CollectionResponse_Track"
      }
     },
     "patch": {
-     "id": "aulaendpoint.aula.patch",
-     "path": "aula/update",
+     "id": "trackendpoint.track.patch",
+     "path": "update",
      "httpMethod": "PATCH",
      "parameters": {
       "id": {
@@ -159,30 +165,15 @@
       "id"
      ],
      "request": {
-      "$ref": "Aula"
+      "$ref": "Track"
      },
      "response": {
-      "$ref": "Aula"
+      "$ref": "Track"
      }
     },
-    "update": {
-     "id": "aulaendpoint.aula.update",
-     "path": "aula/update",
-     "httpMethod": "POST",
-     "request": {
-      "$ref": "Aula"
-     },
-     "response": {
-      "$ref": "Aula"
-     }
-    }
-   }
-  },
-  "device": {
-   "methods": {
     "remove": {
-     "id": "aulaendpoint.device.remove",
-     "path": "device/remove",
+     "id": "trackendpoint.track.remove",
+     "path": "remove",
      "httpMethod": "POST",
      "parameters": {
       "id": {
@@ -196,7 +187,18 @@
       "id"
      ],
      "response": {
-      "$ref": "Aula"
+      "$ref": "Track"
+     }
+    },
+    "update": {
+     "id": "trackendpoint.track.update",
+     "path": "update",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "Track"
+     },
+     "response": {
+      "$ref": "Track"
      }
     }
    }

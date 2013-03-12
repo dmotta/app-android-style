@@ -1,4 +1,4 @@
-package com.gdglima.projects.gdgandroidtour.bo;
+package com.gdglima.projects.androidtour.bo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +8,7 @@ public class Aula {
 	
 	@Id
 	private Long id;
+	
 	private String nombre;
 	
 	

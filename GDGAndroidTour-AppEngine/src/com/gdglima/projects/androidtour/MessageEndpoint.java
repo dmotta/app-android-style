@@ -1,9 +1,10 @@
-package com.gdglima.projects.gdgandroidtour;
+package com.gdglima.projects.androidtour;
 
 import java.io.IOException;
 
 import javax.inject.Named;
 
+import com.gdglima.projects.androidtour.bo.DeviceInfo;
 import com.google.android.gcm.server.Constants;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
